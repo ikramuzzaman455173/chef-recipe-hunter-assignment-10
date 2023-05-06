@@ -13,7 +13,7 @@ const Navbar = () => {
         {/* ====Logo Sectiong===== */}
         <Link to='/' className='inline-flex items-center'>
           <img src="https://html.webinane.com/mazaa/assets/images/logo.png" className="w-16 active' " />
-          {/* <span className='ml-2 text-xl font-bold tracking-wide text-gray-800'>nextpage</span> */}
+          <span className='ml-2 text-xl font-bold tracking-wide text-gray-800'>Chef Mazaa</span>
         </Link>
 
         {/* ====Nav Item Section===== */}
@@ -52,7 +52,8 @@ const Navbar = () => {
               <div className="flex items-center justify-between mb-4">
                 <div>
                   <Link to='/' className='inline-flex items-center'>
-                    <img src="https://html.webinane.com/mazaa/assets/images/logo.png" className="w-16 active' " />
+                    <img src="https://html.webinane.com/mazaa/assets/images/logo.png" className="w-16 active" />
+                    <span className='ml-2 text-xl font-bold tracking-wide text-gray-800'>Chef Mazaa</span>
                   </Link>
                 </div>
                 {/* ====DropDown Menu Close Button===== */}

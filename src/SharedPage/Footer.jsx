@@ -84,10 +84,11 @@ const Footer = () => {
           <hr className="my-6 border-gray-200 md:my-10 dark:border-gray-700" />
 
           <div className="flex flex-col items-center justify-between sm:flex-row">
-            <span>
+            <div className='flex items-center gap-2'>
               {/* <img className="w-auto h-7" src="https://merakiui.com/images/full-logo.svg" alt=""/> */}
-              <img src="https://html.webinane.com/mazaa/assets/images/logo.png" className="w-16 active bg-white h-16 boder-0 rounded-full ' " />
-            </span>
+            <img src="https://html.webinane.com/mazaa/assets/images/logo.png" className="w-16 active bg-white h-16 boder-0 rounded-full ' " />
+            <span className='ml-2 text-xl font-bold tracking-wide text-slate-300'>Chef Mazaa</span>
+            </div>
 
             <p className="mt-4 text-sm text-white sm:mt-0">© Copyright 2023. All Rights Reserved.</p>
           </div>

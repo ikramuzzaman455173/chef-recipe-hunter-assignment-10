@@ -3,15 +3,8 @@ import ChefRecipieBanner from './ChefRecipieBanner'
 import SingleChef from './SingleChef'
 import ChefRecipe from './ChefRecipe'
 import { useLoaderData } from 'react-router-dom'
-import { AuthContext } from '../AuthProvider/AuthProvider'
-import LoadingSpinner from './LoadingSpinner'
 const ChefRecipes = () => {
-  const {loading}=useContext(AuthContext)
   const data = useLoaderData()
-  if (loading) {
-    return <LoadingSpinner/>
-  }
-  // console.log(data);
   return (
     <>
       <ChefRecipieBanner heading="CHEF DETAIL" title="Chef Detail" />

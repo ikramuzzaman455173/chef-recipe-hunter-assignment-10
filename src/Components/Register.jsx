@@ -10,6 +10,10 @@ const Register = () => {
   const [passwordShow, setpasswordShow] = useState(false)
   const [error, seterror] = useState('')
   const { createUser, handleGoogle, handleGithub, handleNamePhotoUrl } = useContext(AuthContext)
+  const navigate = useNavigate()
+  const location = useLocation()
+  // console.log(location);
+  const from = location.state?.from?.pathname || '/chefpage'
   const handleRegister = (e) => {
     e.preventDefault()
     seterror('')
@@ -36,7 +40,7 @@ const Register = () => {
         toast.success('Register Account Successfully !', { type: 'default', autoClose: 2000 })
         handleNamePhotoUrl(result.user, userName, PhotoURL)
         setTimeout(() => {
-          navigate('/login')
+          navigate(from, { replace: true })
         }, 3000);
       }).catch(error => {
         seterror(error.message);
@@ -44,10 +48,7 @@ const Register = () => {
     e.target.reset()
   }
 
-  const navigate = useNavigate()
-  const location = useLocation()
-  // console.log(location);
-  const from = location.state?.from?.pathname || '/chefpage'
+
 
   const googleRegister = () => {
     handleGoogle().then(result => {

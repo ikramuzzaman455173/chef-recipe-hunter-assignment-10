@@ -1,16 +1,16 @@
-import { useContext, useState } from "react"
+import {  useState } from "react"
 import { FaRegStar, FaStar } from "react-icons/fa"
 import { MdFavorite } from "react-icons/md"
 import Rating from "react-rating"
 import { toast } from "react-toastify"
 import SectionInfo from "./SectionInfo"
-import { AuthContext } from "../AuthProvider/AuthProvider"
 import LoadingSpinner from "./LoadingSpinner"
 import LazyLoad from 'react-lazy-load';
+import { useNavigation } from "react-router-dom"
 
 const ChefRecipe = ({ chefRecipeData }) => {
-  const { loading } = useContext(AuthContext)
-  if (loading) {
+  const navigate=useNavigation()
+  if (navigate.state==='loading') {
       return <LoadingSpinner/>
   }
 

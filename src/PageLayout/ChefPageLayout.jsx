@@ -1,14 +1,12 @@
-import { Outlet } from "react-router-dom"
+import { Outlet, useNavigation } from "react-router-dom"
 import Navbar from "../SharedPage/Navbar"
 import Footer from "../SharedPage/Footer"
 import { ToastContainer } from "react-toastify"
-import { useContext } from "react"
-import { AuthContext } from "../AuthProvider/AuthProvider"
 import LoadingSpinner from "../Components/LoadingSpinner"
 
 const ChefPageLayout = () => {
-  const { loading } = useContext(AuthContext)
-  if (loading) {
+const navigate=useNavigation()
+  if (navigate.state==='loading') {
       return <LoadingSpinner/>
   }
   return (

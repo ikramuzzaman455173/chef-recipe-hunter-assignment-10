@@ -4,13 +4,13 @@ import TodayRecipe from './TodayRecipe'
 import TopChefs from './TopChefs'
 import RecipeProgram from './RecipeProgram'
 import SpecialOffer from './SpecialOffer'
-import { AuthContext } from '../AuthProvider/AuthProvider'
+import { useNavigation } from 'react-router-dom'
 import LoadingSpinner from './LoadingSpinner'
 
 const Home = () => {
-  const { loading } = useContext(AuthContext)
-  if (loading) {
-      return <LoadingSpinner/>
+  const navigate = useNavigation()
+  if (navigate.state === 'loading') {
+    return <LoadingSpinner/>
   }
   return (
     <>

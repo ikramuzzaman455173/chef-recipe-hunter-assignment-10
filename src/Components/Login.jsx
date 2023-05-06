@@ -7,7 +7,6 @@ import { useContext } from 'react';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import { toast } from 'react-toastify';
 const Login = () => {
-
   const { loginUser,handleGoogle,handleGithub} = useContext(AuthContext)
   const [passwordShow, setpasswordShow] = useState(false)
   const navigate = useNavigate()
@@ -56,7 +55,7 @@ const Login = () => {
         <div className="w-full mx-auto max-w-md p-4 rounded-md shadow sm:p-8 bg-slate-100 my-10 text-gray-800">
           <h2 className="mb-3 text-3xl font-semibold text-center">Log In to your account</h2>
           <p className="text-md text-center text-gray-600">Dont have account?
-            <span className="focus:underline hover:underline cursor-pointer text-blue-500 ml-2 font-semibold"><Link to="/register">Register here</Link></span>
+            <span className="focus:underline hover:underline cursor-pointer text-blue-500 ml-2 font-semibold"><Link to="/register" state={location.state}>Register here</Link></span>
           </p>
           <div className="my-6 space-y-4 ">
             <button onClick={googleLogin} aria-label="Log In with Google" type="button" className=" active:bg-blue-600 hover:bg-blue-500 duration-300 font-semibold focus:none outline-none hover:text-white flex items-center justify-center w-full p-4 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 border-gray-600 ">
